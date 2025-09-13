@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(223, 7%, 18%);
+  --foreground: hsl(213, 31%, 91%);
+  --card: hsl(223, 7%, 21%);
+  --card-foreground: hsl(213, 31%, 91%);
+  --popover: hsl(223, 7%, 21%);
+  --popover-foreground: hsl(213, 31%, 91%);
+  --primary: hsl(235, 86%, 65%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(220, 5%, 25%);
+  --secondary-foreground: hsl(213, 31%, 91%);
+  --muted: hsl(223, 7%, 15%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --accent: hsl(142, 76%, 36%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(359, 82%, 78%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(223, 7%, 28%);
+  --input: hsl(223, 7%, 28%);
+  --ring: hsl(235, 86%, 65%);
+  --chart-1: hsl(235, 86%, 65%);
+  --chart-2: hsl(142, 76%, 36%);
+  --chart-3: hsl(38, 95%, 54%);
+  --chart-4: hsl(359, 82%, 78%);
+  --chart-5: hsl(214, 9%, 50%);
+  --sidebar: hsl(223, 7%, 21%);
+  --sidebar-foreground: hsl(213, 31%, 91%);
+  --sidebar-primary: hsl(235, 86%, 65%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(142, 76%, 36%);
+  --sidebar-accent-foreground: hsl(0, 0%, 100%);
+  --sidebar-border: hsl(223, 7%, 28%);
+  --sidebar-ring: hsl(235, 86%, 65%);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 8px;
+  --shadow-2xs: 0px 2px 0px 0px hsl(235, 86%, 65% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(235, 86%, 65% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(235, 86%, 65% / 0.00), 0px 1px 2px -1px hsl(235, 86%, 65% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(235, 86%, 65% / 0.00), 0px 1px 2px -1px hsl(235, 86%, 65% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(235, 86%, 65% / 0.00), 0px 2px 4px -1px hsl(235, 86%, 65% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(235, 86%, 65% / 0.00), 0px 4px 6px -1px hsl(235, 86%, 65% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(235, 86%, 65% / 0.00), 0px 8px 10px -1px hsl(235, 86%, 65% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(235, 86%, 65% / 0.00);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+.server-icon {
+  transition: border-radius 0.2s ease;
+}
+
+.server-icon:hover {
+  border-radius: 16px;
+}
+
+.server-icon.active {
+  border-radius: 16px;
+}
+
+.channel-item:hover {
+  background-color: hsl(223, 7%, 25%);
+}
+
+.message-hover:hover {
+  background-color: hsl(223, 7%, 20%);
+}
+
+.user-status-online {
+  background-color: hsl(142, 76%, 36%);
+}
+
+.user-status-away {
+  background-color: hsl(38, 95%, 54%);
+}
+
+.user-status-busy {
+  background-color: hsl(359, 82%, 78%);
+}
+
+.user-status-offline {
+  background-color: hsl(214, 9%, 50%);
+}
+
+.p2p-indicator {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.voice-indicator {
+  background: linear-gradient(45deg, hsl(142, 76%, 36%), hsl(142, 76%, 46%));
+  animation: voice-activity 1.5s ease-in-out infinite;
+}
+
+@keyframes voice-activity {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
